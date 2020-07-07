@@ -70,7 +70,7 @@ fw, PSD = signal.welch(senal, fm, nperseg=1024)
 #Después del canal ruidoso
 fw, PSD = signal.welch(Rx, fm, nperseg=1024)
 ```
-Además, se procedió a graficar cada una para cada valor de SNR, obteniendo como resultado las siguientes gráficas:
+Además, se procedió a graficar cada una para cada valor de SNR, obteniendo como resultado las siguientes gráficas. Además, se puede observar que la densidad es practicamente la misma para todos los valores de SNR.
 
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/ACR-2.png)
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/DCR-2.png)
