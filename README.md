@@ -27,13 +27,24 @@ def bpsk(bits):
             senal[k*p:(k+1)*p]= -seno   
 ```
 
-Luego, graficando los primeros 5 bits de la señal ya modulada, se obtuvo lo siguiente:
+Luego, graficando los primeros 5 bits de la señal ya modulada con 50 puntos de muestreo, para una frecuencia de muestreo de 250 kHz, se obtuvo lo siguiente:
 
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/Tx.png)
 
 
 ##  Calcular la potencia promedio de la señal modulada generada.
  
+Para este enunciado, fue necesario calcular la potencia instantanea de la señal transmitida, definida como el cuadrado de la señal. Luego, para la potencia promedio era necesario realizar una integración de la potencia intantanea, lo cual se realizó con ayuda de la función "integrate" y de forma trapezoidal. El código utilizado fue el siguiente:
+```
+#Potencia instantanea
+Pins = senal**2
+
+#Potencia promedio
+Ps = integrate.trapz(Pins,ts) /(N*T) 
+```
+Lo anterior nos dio como resultado una potencia promedio de la señal modulada de 0.4900009800019598 W.
+
+##  Simular un canal ruidoso del tipo AWGN (ruido aditivo blanco gaussiano) con una relación señal a ruido (SNR) desde -2 hasta 3 dB.
 
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/Rx-2.png)
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/RX-1.png)
@@ -41,11 +52,6 @@ Luego, graficando los primeros 5 bits de la señal ya modulada, se obtuvo lo sig
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/RX1.png)
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/RX2.png)
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/RX3.png)
-
-
-##  Simular un canal ruidoso del tipo AWGN (ruido aditivo blanco gaussiano) con una relación señal a ruido (SNR) desde -2 hasta 3 dB.
-
-
 
 ##  Graficar la densidad espectral de potencia de la señal con el método de Welch (SciPy), antes y después del canal ruidoso.
 
