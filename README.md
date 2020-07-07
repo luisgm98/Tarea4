@@ -18,14 +18,14 @@ La modulación BPSK o modulación binaria por desplazamiento de fase, se encarga
 Se trabaja a una frecuencia de 5 kHz, por lo que el periodo corresponde a 200 μs, tal y como se observa en la figura anterior.
 
 Para calcular la modulación BPSK de los bits contenidos en el archivo "bits10k.csv", se procedió a crear la siguiente función:
-'''
+```
 def bpsk(bits):
     for k, b in enumerate(bits):
         if b == 1:
             senal[k*p:(k+1)*p]= seno
         else:
             senal[k*p:(k+1)*p]= -seno   
-'''
+```
 
 Luego, graficando los primeros 5 bits de la señal ya modulada, se obtuvo lo siguiente:
 
