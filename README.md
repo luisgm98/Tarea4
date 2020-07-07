@@ -34,7 +34,7 @@ Luego, graficando los primeros 5 bits de la señal ya modulada con 50 puntos de 
 
 ##  Calcular la potencia promedio de la señal modulada generada.
  
-Para este enunciado, fue necesario calcular la potencia instantanea de la señal transmitida, definida como el cuadrado de la señal. Luego, para la potencia promedio era necesario realizar una integración de la potencia intantanea, lo cual se realizó con ayuda de la función "integrate" y de forma trapezoidal. El código utilizado fue el siguiente:
+Para este enunciado, fue necesario calcular la potencia instantanea de la señal transmitida, definida como el cuadrado de la señal en cada punto, ya que la señal es discreta. Luego, para la potencia promedio era necesario realizar una integración de la potencia intantanea, lo cual se realizó aplicando una integración trapezoidal con ayuda de la función "integrate". El código utilizado fue el siguiente:
 ```
 #Potencia instantanea
 Pins = senal**2
