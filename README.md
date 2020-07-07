@@ -61,6 +61,17 @@ Las siguientes imagenes nos muestran la señal recibida para cada valor de SNR c
 
 ##  Graficar la densidad espectral de potencia de la señal con el método de Welch (SciPy), antes y después del canal ruidoso.
 
+En este enunciado, se utilizó la biblioteca "scipy", la cual nos provee una función que se encarga de calcular la densidad espectral de potencia de la señal mediante el método de Welch. Esta función recibe como argumento la frecuencia de muestreo y la onda transmitida, es decir, Tx, para antes del canal ruidoso; mientras que para después del canal ruidoso, se utiliza onda recibida, es decir, Rx. El código utilizado fue el siguiente:
+
+```
+#Antes del canal ruidoso
+fw, PSD = signal.welch(senal, fm, nperseg=1024)
+    
+#Después del canal ruidoso
+fw, PSD = signal.welch(Rx, fm, nperseg=1024)
+```
+Además, se procedió a graficar cada una para cada valor de SNR, obteniendo como resultado las siguientes gráficas:
+
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/ACR-2.png)
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/DCR-2.png)
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/ACR-1.png)
@@ -115,11 +126,11 @@ Para un SNR de 2 tenemos 0.0 errores, con un BER de 0.0
 Para un SNR de 3 tenemos 0.0 errores, con un BER de 0.0
 ```
 
-Podemos observar que la mayor cantidad de errores se da para un SNR de -2, lo cual era de esperarse, ya que entre mayor sea el SNR, menos errores. 
+Podemos observar que la mayor cantidad de errores se da para un SNR de -2, lo cual era de esperarse, ya que entre mayor sea el SNR, menos errores debido a que el ruido es menor
 A modo de experimento personal, se definió un umbral de 0, para lo cual se obtuvieron cero errores para todos los valores SNR. 
 
 ## Graficar BER versus SNR.
 
-E
+Esta gráfica nos sirve para observar mejor los resultados obtenidos en el enunciado anterior. Podemos observar como disminuye la cantidad de errores al aumentar SNR.
 
-![alt text](https://github.com/luisgm98/Tarea4/blob/master/BERvsSNR.png)
+![alt text](https://github.com/luisgm98/Tarea4/blob/master/ber.png)
