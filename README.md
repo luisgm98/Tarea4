@@ -46,6 +46,12 @@ Lo anterior nos dio como resultado una potencia promedio de la señal modulada d
 
 ##  Simular un canal ruidoso del tipo AWGN (ruido aditivo blanco gaussiano) con una relación señal a ruido (SNR) desde -2 hasta 3 dB.
 
+Es importante recordar el la ecuación de la relación señal a ruido, o SNR:
+![alt text](https://github.com/luisgm98/Tarea4/blob/master/ruido.PNG)
+
+Para este enunciado, se procede a despejar de la ecuación anterior el Pn, correspondiente a la potencia del ruido. Luego, para crear el ruido se utilizó la función "random" de la libreria de "numpy" y se procedió a calcularlo con una distribución normal y una desviación estandar igual a la raiz cuadrada de Pn. Este ruido se le suma a la señal transmitida ya que es aditivo. Importante recalcar que se calculó para SNR de -2, -1, 0, 1, 2 y 3  dB. 
+Las siguientes imagenes nos muestran la señal recibida para cada valor de SNR calculado, solo se muestran los primeros 5 bits.
+
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/Rx-2.png)
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/RX-1.png)
 ![alt text](https://github.com/luisgm98/Tarea4/blob/master/RX0.png)
